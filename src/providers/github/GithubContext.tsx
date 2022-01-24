@@ -1,16 +1,8 @@
 import { createContext, useContext } from "react";
-
-interface UsersType {
-  avatar_url: string;
-  id: number;
-  login: string;
-  followers_url: string;
-  following_url: string;
-  repos_url: string;
-}
+import { UserProps } from "../../types/usersTypes";
 
 interface DefaultType {
-  users?: Array<UsersType>;
+  users?: Array<UserProps>;
   loading?: boolean;
   fetchUsers: () => void;
 }

@@ -15,7 +15,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "settings": {
     "react": {
-      "version": "^17.0.2"
+      "version": "latest"
     }
   },
   "rules": {

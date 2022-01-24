@@ -1,7 +1,4 @@
-interface ComposeProps {
-  components: Array<any>;
-  children: React.ReactNode;
-}
+import { ComposeProps } from "../../types/composeTypes";
 
 const Compose = ({ components, children }: ComposeProps) => {
   return (

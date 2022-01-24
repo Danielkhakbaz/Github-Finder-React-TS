@@ -1,17 +1,5 @@
 import { Link } from "react-router-dom";
-
-interface UserItemType {
-  avatar_url: string;
-  id: number;
-  login: string;
-  followers_url: string;
-  following_url: string;
-  repos_url: string;
-}
-
-interface UserItemProps {
-  user: UserItemType;
-}
+import { UserItemProps } from "../../types/usersTypes";
 
 const UserItem = ({
   user: { avatar_url: avatarURL, login: username },

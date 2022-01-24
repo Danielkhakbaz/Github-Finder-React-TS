@@ -1,21 +1,13 @@
 import { useState } from "react";
 import { GithubContext } from "./GithubContext";
+import { UserProps } from "../../types/usersTypes";
 
 interface GithubProviderProps {
   children: React.ReactNode;
 }
 
-interface UsersType {
-  avatar_url: string;
-  id: number;
-  login: string;
-  followers_url: string;
-  following_url: string;
-  repos_url: string;
-}
-
 const GithubProvider = ({ children }: GithubProviderProps) => {
-  const [users, setUsers] = useState<Array<UsersType>>([]);
+  const [users, setUsers] = useState<Array<UserProps>>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   const fetchUsers = async () => {
