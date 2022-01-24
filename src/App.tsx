@@ -1,13 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Compose from "./components/compose/compose";
+import GithubProvider from "./providers/github/GithubProvider";
 import Layout from "./components/layout/layout";
 import Home from "./pages/home";
 import NotFound from "./pages/404";
 import About from "./pages/about";
 
 const App = () => {
+  const Providers = [GithubProvider, BrowserRouter];
+
   return (
     <>
-      <BrowserRouter>
+      <Compose components={Providers}>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -15,7 +19,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
-      </BrowserRouter>
+      </Compose>
     </>
   );
 };
