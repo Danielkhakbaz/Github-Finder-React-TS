@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useReducer } from "react";
+import { GithubReducer } from "./GithubReducer";
 import { GithubContext } from "./GithubContext";
-import { UserProps } from "../../types/usersTypes";
+import { Actions } from "./Actions";
 
 interface GithubProviderProps {
   children: React.ReactNode;
 }
 
 const GithubProvider = ({ children }: GithubProviderProps) => {
-  const [users, setUsers] = useState<Array<UserProps>>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const initialState = {
+    users: [],
+    loading: true,
+  };
+
+  const [state, dispatch] = useReducer(GithubReducer, initialState);
 
   const fetchUsers = async () => {
     const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users`, {
@@ -18,12 +23,15 @@ const GithubProvider = ({ children }: GithubProviderProps) => {
     });
     const data = await response.json();
 
-    setUsers(data);
-    setLoading(false);
+    dispatch({
+      type: Actions.GET_USERS,
+      payload: data,
+    });
   };
 
   return (
-    <GithubContext.Provider value={{ users, loading, fetchUsers }}>
+    <GithubContext.Provider
+      value={{ users: state.users, loading: state.loading, fetchUsers }}>
       {children}
     </GithubContext.Provider>
   );
