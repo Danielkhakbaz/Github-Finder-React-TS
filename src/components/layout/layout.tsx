@@ -1,8 +1,8 @@
 import Navbar from "./navbar";
 import Footer from "./footer";
-import { LayoutProps } from "../../types/layoutTypes";
+import { ChildrenTypes } from "../../types/childrenTypes";
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children }: ChildrenTypes) => {
   return (
     <>
       <div className="h-max min-h-screen bg-gray-100 flex flex-col justify-between">

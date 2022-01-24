@@ -1,13 +1,18 @@
 import { Actions } from "./Actions";
-import { StateType, ActionType } from "../../types/reducerTypes";
+import { StateTypes, ActionTypes } from "../../types/reducerTypes";
 
-export const GithubReducer = (state: StateType, action: ActionType) => {
+export const GithubReducer = (state: StateTypes, action: ActionTypes) => {
   switch (action.type) {
     case Actions.GET_USERS:
       return {
         ...state,
         users: action.payload,
         loading: false,
+      };
+    case Actions.SET_LOADING:
+      return {
+        ...state,
+        loading: true,
       };
     default:
       return state;

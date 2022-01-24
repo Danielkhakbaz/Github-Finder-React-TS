@@ -13,7 +13,6 @@ const Footer = () => {
             rel="noreferrer">
             Danial Khakbaz
           </a>
-          .
         </p>
       </footer>
     </>

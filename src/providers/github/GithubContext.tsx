@@ -1,8 +1,8 @@
 import { createContext, useContext } from "react";
-import { UserProps } from "../../types/usersTypes";
+import { UserTypes } from "../../types/userTypes";
 
 interface DefaultType {
-  users?: Array<UserProps>;
+  users?: Array<UserTypes>;
   loading?: boolean;
   fetchUsers: () => void;
 }

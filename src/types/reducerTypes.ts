@@ -1,11 +1,12 @@
+import { UserTypes } from "./userTypes";
 import { Actions } from "../providers/github/Actions";
 
-export interface StateType {
-  users: any;
-  loading: any;
+export interface StateTypes {
+  users?: Array<UserTypes>;
+  loading?: boolean;
 }
 
-export interface ActionType {
+export interface ActionTypes {
   type: Actions;
-  payload: Array<any>;
+  payload?: Array<UserTypes>;
 }

@@ -1,4 +1,4 @@
-export type ComposeProps = {
-  components: Array<any>;
+export type ComposeTypes = {
+  components: Array<React.ComponentType | React.ReactNode>;
   children: React.ReactNode;
 };

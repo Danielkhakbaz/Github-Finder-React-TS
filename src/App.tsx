@@ -3,8 +3,8 @@ import Compose from "./components/compose/compose";
 import GithubProvider from "./providers/github/GithubProvider";
 import Layout from "./components/layout/layout";
 import Home from "./pages/home";
-import NotFound from "./pages/404";
 import About from "./pages/about";
+import NotFound from "./pages/404";
 
 const App = () => {
   const Providers = [GithubProvider, BrowserRouter];
