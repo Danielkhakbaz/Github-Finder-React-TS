@@ -1,5 +1,5 @@
 import { Actions } from "./GithubActions";
-import { StateTypes, ActionTypes } from "../../types/reducerTypes";
+import { StateTypes, ActionTypes } from "../../types/githubReducerTypes";
 
 export const GithubReducer = (state: StateTypes, action: ActionTypes) => {
   switch (action.type) {
