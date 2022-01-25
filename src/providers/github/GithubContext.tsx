@@ -4,13 +4,15 @@ import { UserTypes } from "../../types/userTypes";
 interface DefaultType {
   users?: Array<UserTypes>;
   loading?: boolean;
-  fetchUsers: () => void;
+  searchUsers: (searchValue: string) => void;
+  clearUsers: () => void;
 }
 
 const defaultValue: DefaultType = {
   users: [],
   loading: true,
-  fetchUsers: () => {},
+  searchUsers: () => {},
+  clearUsers: () => {},
 };
 
 export const GithubContext = createContext(defaultValue);

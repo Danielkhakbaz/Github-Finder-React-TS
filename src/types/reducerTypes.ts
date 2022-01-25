@@ -1,5 +1,5 @@
 import { UserTypes } from "./userTypes";
-import { Actions } from "../providers/github/Actions";
+import { Actions } from "../providers/github/GithubActions";
 
 export interface StateTypes {
   users?: Array<UserTypes>;

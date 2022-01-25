@@ -1,10 +1,19 @@
 import { useState } from "react";
+import { useGithubContext } from "../../providers/github/GithubContext";
 
 const UserSearch = () => {
   const [searchValue, setSearchValue] = useState<string>("");
 
+  const { searchUsers, clearUsers } = useGithubContext();
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
+
+    if (searchValue == "") {
+      alert("Please Enter something to search!");
+    } else {
+      searchUsers(searchValue);
+    }
   };
 
   const handleChange = (e: any) => {
@@ -13,11 +22,12 @@ const UserSearch = () => {
 
   const handleClick = () => {
     setSearchValue("");
+    clearUsers();
   };
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center my-12">
         <div className="w-3/5">
           <form onSubmit={handleSubmit}>
             <div className="form-control">

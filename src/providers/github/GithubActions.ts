@@ -1,4 +1,5 @@
 export enum Actions {
   GET_USERS = "GET_USERS",
+  CLEAR_USERS = "CLEAR_USERS",
   SET_LOADING = "SET_LOADING",
 }
