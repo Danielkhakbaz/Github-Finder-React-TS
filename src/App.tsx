@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Compose from "./components/compose/compose";
 import GithubProvider from "./providers/github/GithubProvider";
 import AlertProvider from "./providers/alert/AlertProvider";
+import Compose from "./components/compose/compose";
 import Layout from "./components/layout/layout";
 import Home from "./pages/home";
 import About from "./pages/about";

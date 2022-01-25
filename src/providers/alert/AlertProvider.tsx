@@ -14,7 +14,7 @@ const AlertProvider = ({ children }: ChildrenTypes) => {
 
   const [state, dispatch] = useReducer(AlertReducer, initialState);
 
-  const setAlert = (message: any, type: any) => {
+  const setAlert = (message: string, type: string) => {
     dispatch({
       type: Actions.SET_ALERT,
       payload: { message, type },

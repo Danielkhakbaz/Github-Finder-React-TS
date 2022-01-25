@@ -1,11 +1,11 @@
-import { Actions } from "../providers/alert/AlertActions";
+// import { Actions } from "../providers/alert/AlertActions";
 import { AlertTypes } from "../types/alertTypes";
 
-export interface StateTypes {
+export type StateTypes = {
   alert?: AlertTypes;
-}
+};
 
-export interface ActionTypes {
-  type?: Actions;
-  payload?: AlertTypes;
-}
+export type ActionTypes = {
+  type: string;
+  payload?: any;
+};

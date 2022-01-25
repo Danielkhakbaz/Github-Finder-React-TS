@@ -1,4 +1,4 @@
-export interface AlertTypes {
+export type AlertTypes = {
   message?: string;
   type?: string;
-}
+};

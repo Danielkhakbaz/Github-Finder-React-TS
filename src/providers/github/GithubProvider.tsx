@@ -1,8 +1,8 @@
 import { useReducer } from "react";
-import { GithubReducer } from "./GithubReducer";
-import { GithubContext } from "./GithubContext";
 import { ChildrenTypes } from "../../types/childrenTypes";
+import { GithubReducer } from "./GithubReducer";
 import { Actions } from "./GithubActions";
+import { GithubContext } from "./GithubContext";
 
 const GithubProvider = ({ children }: ChildrenTypes) => {
   const initialState = {

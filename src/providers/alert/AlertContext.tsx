@@ -3,7 +3,7 @@ import { AlertTypes } from "../../types/alertTypes";
 
 interface DefaultType {
   alert: AlertTypes;
-  setAlert: (message: any, type: any) => void;
+  setAlert: (message: string, type: string) => void;
   removeAlert: () => void;
 }
 
