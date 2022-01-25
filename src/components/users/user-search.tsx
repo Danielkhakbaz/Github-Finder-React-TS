@@ -5,14 +5,13 @@ import { useGithubContext } from "../../providers/github/GithubContext";
 
 const UserSearch = () => {
   const [searchValue, setSearchValue] = useState<string>("");
-
   const { searchUsers, clearUsers } = useGithubContext();
   const { setAlert, removeAlert } = useAlertContext();
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
 
-    if (searchValue == "") {
+    if (!searchValue) {
       setAlert("Please Enter something to search!", "error");
     } else {
       removeAlert();
@@ -20,9 +19,9 @@ const UserSearch = () => {
     }
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (event: { target: { value: string } }) => {
     removeAlert();
-    setSearchValue(e.target.value);
+    setSearchValue(event.target.value);
   };
 
   const handleClick = () => {

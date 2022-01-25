@@ -1,13 +1,7 @@
 import { createContext, useContext } from "react";
-import { AlertTypes } from "../../types/alertTypes";
+import { DefaultAlertContextType } from "../../types/alertContextTypes";
 
-interface DefaultType {
-  alert: AlertTypes;
-  setAlert: (message: string, type: string) => void;
-  removeAlert: () => void;
-}
-
-const defaultValue: DefaultType = {
+const defaultAlertContextValue: DefaultAlertContextType = {
   alert: {
     message: "",
     type: "",
@@ -16,7 +10,7 @@ const defaultValue: DefaultType = {
   removeAlert: () => {},
 };
 
-export const AlertContext = createContext(defaultValue);
+export const AlertContext = createContext(defaultAlertContextValue);
 
 export const useAlertContext = () => {
   return useContext(AlertContext);

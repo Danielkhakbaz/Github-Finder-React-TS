@@ -6,13 +6,13 @@ const AlertError = () => {
   return (
     <>
       {alert?.message && (
-        <div className="alert alert-error visible">
-          <div className="flex-1">
+        <div className="alert alert-error">
+          <div className="flex">
             <svg
+              className="w-6 h-6 mx-2 stroke-current"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 24 24"
-              className="w-6 h-6 mx-2 stroke-current">
+              viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
