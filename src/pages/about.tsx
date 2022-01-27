@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { datas } from "../services/api/aboutData";
+import { socialMedias } from "../services/api/aboutData";
 
 const About = () => {
   useEffect(() => {
@@ -25,7 +25,7 @@ const About = () => {
       <div>
         <p className="text-base">My Socials:</p>
         <div className="flex mt-2">
-          {datas.map((data) => (
+          {socialMedias.map((data) => (
             <a
               className="link-neutral text-4xl mx-2"
               href={data.href}

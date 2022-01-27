@@ -1,5 +1,5 @@
-import { FaCodepen, FaUserFriends, FaUsers, FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { FaArrowLeft, FaUsers, FaUserFriends, FaCodepen } from "react-icons/fa";
 
 const UserInfo = ({ user }: any) => {
   const {
@@ -22,34 +22,25 @@ const UserInfo = ({ user }: any) => {
     <>
       <div className="mb-4">
         <Link className="btn btn-ghost" to="/">
-          <FaArrowLeft className="inline mr-2" />
+          <FaArrowLeft className="mr-2" />
           <span>Back To Search</span>
         </Link>
       </div>
-      <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8">
-        <div className="custom-card-image mb-6 md:mb-0">
-          <div className="rounded-lg shadow-xl card image-full">
-            <figure>
-              <img src={avatarURL} alt="image" />
-            </figure>
-            <div className="card-body justify-end">
-              <h2 className="card-title mb-0">{name}</h2>
-              <p>{login}</p>
+      <div className="grid grid-cols-1 mb-6 xl:grid-cols-3 lg:grid-cols-3">
+        <div className="flex justify-between lg:flex-col">
+          <div>
+            <h1 className="card-title text-4xl">{name}</h1>
+            <div className="card-title">
+              <div className="ml-2 mr-1 badge badge-success">{type}</div>
+              {hireable && (
+                <div className="mx-1 badge badge-info">Hireable</div>
+              )}
             </div>
+            <p className="text-lg font-semibold">{bio}</p>
           </div>
-        </div>
-      </div>
-      <div className="col-span-2">
-        <div className="mb-6">
-          <h1 className="text-3xl card-title">
-            {name}
-            <div className="ml-2 mr-1 badge badge-success">{type}</div>
-            {hireable && <div className="mx-1 badge badge-info">Hireable</div>}
-          </h1>
-          <p>{bio}</p>
-          <div className="mt-4 card-actions">
+          <div className="card-actions">
             <a
-              className="btn btn-outline"
+              className="btn btn-outline btn-md"
               href={htmlURL}
               target="_blank"
               rel="noreferrer">
@@ -57,6 +48,20 @@ const UserInfo = ({ user }: any) => {
             </a>
           </div>
         </div>
+        <div />
+        <div className="custom-card-image mt-4 lg:mt-0">
+          <div className="card image-full rounded-lg shadow-xl">
+            <figure>
+              <img src={avatarURL} alt="image" />
+            </figure>
+            <div className="card-body justify-end">
+              <h2 className="card-title">{name}</h2>
+              <p>{login}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="col-span-2 mb-6">
         <div className="w-full rounded-lg shadow-md bg-base-100 stats">
           {location && (
             <div className="stat">
@@ -92,7 +97,7 @@ const UserInfo = ({ user }: any) => {
       <div className="w-full py-5 mb-6 rounded-lg shadow-md bg-base-100 stats">
         <div className="stat">
           <div className="stat-figure text-secondary">
-            <FaUsers className="text-3xl md:text-5xl" />
+            <FaUsers className="text-3xl hidden md:text-5xl lg:block" />
           </div>
           <div className="stat-title pr-5">Folllowers</div>
           <div className="stat-value pr-5 text-3xl md:text-4xl">
@@ -101,7 +106,7 @@ const UserInfo = ({ user }: any) => {
         </div>
         <div className="stat">
           <div className="stat-figure text-secondary">
-            <FaUserFriends className="text-3xl md:text-5xl" />
+            <FaUserFriends className="text-3xl hidden md:text-5xl lg:block" />
           </div>
           <div className="stat-title pr-5">Folllowing</div>
           <div className="stat-value pr-5 text-3xl md:text-4xl">
@@ -110,7 +115,7 @@ const UserInfo = ({ user }: any) => {
         </div>
         <div className="stat">
           <div className="stat-figure text-secondary">
-            <FaCodepen className="text-3xl md:text-5xl" />
+            <FaCodepen className="text-3xl hidden md:text-5xl lg:block" />
           </div>
           <div className="stat-title pr-5">Public Repos</div>
           <div className="stat-value pr-5 text-3xl md:text-4xl">

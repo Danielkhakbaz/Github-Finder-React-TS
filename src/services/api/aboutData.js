@@ -6,7 +6,7 @@ import {
   AiFillMail,
 } from "react-icons/ai";
 
-export const datas = [
+export const socialMedias = [
   {
     href: "https://www.instagram.com/danielkhakbaz",
     icon: <AiFillInstagram />,

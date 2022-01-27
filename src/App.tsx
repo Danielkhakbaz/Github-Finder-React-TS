@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GithubProvider from "./providers/github/GithubProvider";
-import AlertProvider from "./providers/alert/AlertProvider";
 import Compose from "./components/compose/compose";
 import Layout from "./components/layout/layout";
 import Home from "./pages/home";
@@ -9,7 +8,7 @@ import About from "./pages/about";
 import NotFound from "./pages/404";
 
 const App = () => {
-  const Providers = [GithubProvider, AlertProvider, BrowserRouter];
+  const Providers = [GithubProvider, BrowserRouter];
 
   return (
     <>

@@ -1,38 +1,31 @@
 import { useState } from "react";
-import Alert from "../alert/alertError";
-import { useAlertContext } from "../../providers/alert/AlertContext";
-import { useGithubContext } from "../../providers/github/GithubContext";
+import { useGithubActionsContext } from "../../providers/github/GithubContext";
+import { searchUsers } from "../../providers/github/GithubAction";
+import { Actions } from "../../providers/github/Actions";
 
 const UserSearch = () => {
   const [searchValue, setSearchValue] = useState<string>("");
-  const { searchUsers, clearUsers } = useGithubContext();
-  const { setAlert, removeAlert } = useAlertContext();
+  const { dispatch } = useGithubActionsContext();
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!searchValue) {
-      setAlert("Please Enter something to search!", "error");
-    } else {
-      removeAlert();
-      searchUsers(searchValue);
-    }
+    dispatch({ type: Actions.SET_LOADING });
+    const users = await searchUsers(searchValue);
+    dispatch({ type: Actions.GET_USERS, payload: users });
   };
 
   const handleChange = (event: { target: { value: string } }) => {
-    removeAlert();
     setSearchValue(event.target.value);
   };
 
   const handleClick = () => {
-    removeAlert();
     setSearchValue("");
-    clearUsers();
+    dispatch({ type: Actions.CLEAR_USERS });
   };
 
   return (
     <>
-      <Alert />
       <div className="flex justify-center my-12">
         <div className="w-3/5">
           <form onSubmit={handleSubmit}>

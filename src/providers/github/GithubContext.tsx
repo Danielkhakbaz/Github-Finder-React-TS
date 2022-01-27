@@ -1,31 +1,12 @@
 import { createContext, useContext } from "react";
-import { UserTypes, UserDefaultValues } from "../../types/userTypes";
-import { RepoItemTypes } from "../../types/repoTypes";
+import { defaultContextValue, defaultActionsContextValue } from "./Defaults";
 
-interface DefaultType {
-  users?: Array<UserTypes>;
-  user?: UserTypes;
-  repos?: Array<RepoItemTypes>;
-  loading?: boolean;
-  getUser: (username: string) => void;
-  getUserRepos: (username: string) => void;
-  searchUsers: (searchValue: string) => void;
-  clearUsers: () => void;
-}
-
-const defaultValue: DefaultType = {
-  users: [],
-  user: UserDefaultValues,
-  repos: [],
-  loading: true,
-  getUser: () => {},
-  getUserRepos: () => {},
-  searchUsers: () => {},
-  clearUsers: () => {},
-};
-
-export const GithubContext = createContext(defaultValue);
+export const GithubContext = createContext(defaultContextValue);
+export const GithubActionsContext = createContext(defaultActionsContextValue);
 
 export const useGithubContext = () => {
   return useContext(GithubContext);
+};
+export const useGithubActionsContext = () => {
+  return useContext(GithubActionsContext);
 };

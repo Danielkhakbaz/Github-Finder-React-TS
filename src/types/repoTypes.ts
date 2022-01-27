@@ -4,7 +4,7 @@ export type RepoTypes = {
   description: string;
   html_url: string;
   forks: number;
-  open_issuses: number;
+  open_issues: number;
   watchers_count: number;
   stargazers_count: number;
 };
