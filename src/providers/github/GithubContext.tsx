@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { UserTypes, UserValues } from "../../types/userTypes";
+import { UserTypes, UserDefaultValues } from "../../types/userTypes";
 import { RepoItemTypes } from "../../types/repoTypes";
 
 interface DefaultType {
@@ -15,7 +15,7 @@ interface DefaultType {
 
 const defaultValue: DefaultType = {
   users: [],
-  user: UserValues,
+  user: UserDefaultValues,
   repos: [],
   loading: true,
   getUser: () => {},

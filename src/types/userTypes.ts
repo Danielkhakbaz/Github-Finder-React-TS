@@ -15,7 +15,11 @@ export type UserTypes = {
   hireable: string;
 };
 
-export const UserValues = {
+export type UserItemTypes = {
+  user: UserTypes;
+};
+
+export const UserDefaultValues = {
   avatar_url: "",
   id: 0,
   login: "",
@@ -30,8 +34,4 @@ export const UserValues = {
   following: "",
   public_repos: "",
   hireable: "",
-};
-
-export type UserItemTypes = {
-  user: UserTypes;
 };
