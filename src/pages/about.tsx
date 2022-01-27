@@ -1,12 +1,11 @@
-import {
-  AiFillInstagram,
-  AiOutlineTwitter,
-  AiFillLinkedin,
-  AiFillGithub,
-  AiFillMail,
-} from "react-icons/ai";
+import { useEffect } from "react";
+import { datas } from "../services/api/aboutData";
 
 const About = () => {
+  useEffect(() => {
+    document.title = "About | Github Finder";
+  });
+
   return (
     <>
       <strong className="text-7xl tracking-wide">Github Finder</strong>
@@ -16,7 +15,9 @@ const About = () => {
         star to this{" "}
         <a
           className="link link-neutral"
-          href="https://github.com/Danielkhakbaz/Github-Finder-React-TS">
+          href="https://github.com/Danielkhakbaz/Github-Finder-React-TS"
+          target="_blank"
+          rel="noreferrer">
           Project on Github
         </a>{" "}
         if you want to :)
@@ -24,41 +25,16 @@ const About = () => {
       <div>
         <p className="text-base">My Socials:</p>
         <div className="flex mt-2">
-          <a
-            className="link-neutral text-4xl mx-2"
-            href="https://www.instagram.com/danielkhakbaz"
-            target="_blank"
-            rel="noreferrer">
-            <AiFillInstagram />
-          </a>
-          <a
-            className="link-neutral text-4xl mx-2"
-            href="https://www.twitter.com/danielkhakbaz"
-            target="_blank"
-            rel="noreferrer">
-            <AiOutlineTwitter />
-          </a>
-          <a
-            className="link-neutral text-4xl mx-2"
-            href="https://www.linkedin.com/in/danielkhakbaz"
-            target="_blank"
-            rel="noreferrer">
-            <AiFillLinkedin />
-          </a>
-          <a
-            className="link-neutral text-4xl mx-2"
-            href="https://www.github.com/danielkhakbaz"
-            target="_blank"
-            rel="noreferrer">
-            <AiFillGithub />
-          </a>
-          <a
-            className="link-neutral text-4xl mx-2"
-            href="mailto:danialkhakbaz.dk@gmail.com"
-            target="_blank"
-            rel="noreferrer">
-            <AiFillMail />
-          </a>
+          {datas.map((data) => (
+            <a
+              className="link-neutral text-4xl mx-2"
+              href={data.href}
+              key={data.href}
+              target="_blank"
+              rel="noreferrer">
+              {data.icon}
+            </a>
+          ))}
         </div>
       </div>
     </>

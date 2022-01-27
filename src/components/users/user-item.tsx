@@ -15,7 +15,7 @@ const UserItem = ({
           </div>
           <div>
             <h2 className="card-title">{username}</h2>
-            <Link className="link-hover" to={`/users/${username}`}>
+            <Link className="link-hover" to={`/user/${username}`}>
               Visit Profile
             </Link>
           </div>

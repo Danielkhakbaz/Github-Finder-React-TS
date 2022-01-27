@@ -1,5 +1,7 @@
 export enum Actions {
   GET_USERS = "GET_USERS",
+  GET_USER = "GET_USER",
+  GET_REPOS = "GET_REPOS",
   CLEAR_USERS = "CLEAR_USERS",
   SET_LOADING = "SET_LOADING",
 }

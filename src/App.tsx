@@ -4,6 +4,7 @@ import AlertProvider from "./providers/alert/AlertProvider";
 import Compose from "./components/compose/compose";
 import Layout from "./components/layout/layout";
 import Home from "./pages/home";
+import User from "./pages/user";
 import About from "./pages/about";
 import NotFound from "./pages/404";
 
@@ -16,6 +17,7 @@ const App = () => {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/user/:username" element={<User />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
