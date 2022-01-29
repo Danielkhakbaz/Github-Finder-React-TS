@@ -32,14 +32,14 @@ const UserSearch = () => {
             <div className="form-control">
               <div className="relative">
                 <input
-                  className="input w-full input-md input-bordered text-black"
+                  className="input input-md input-bordered w-full text-black"
                   placeholder="Search..."
                   type="text"
                   value={searchValue}
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-md w-36 absolute top-0 right-0 rounded-l-none"
+                  className="btn btn-md w-36 absolute rounded-l-none top-0 right-0"
                   disabled={!searchValue}>
                   Go
                 </button>
@@ -49,7 +49,7 @@ const UserSearch = () => {
         </div>
         <div>
           <button
-            className="w-full btn btn-ghost btn-md ml-2"
+            className="btn btn-ghost btn-md w-full ml-2"
             onClick={handleClick}
             disabled={!searchValue}>
             Clear

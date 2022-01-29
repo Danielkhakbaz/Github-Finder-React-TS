@@ -1,4 +1,4 @@
-import { FaEye, FaInfo, FaLink, FaStar, FaUtensils } from "react-icons/fa";
+import { FaLink, FaEye, FaStar, FaInfo, FaUtensils } from "react-icons/fa";
 import { RepoItemTypes } from "../../types/repoTypes";
 
 const RepoItem = ({ repo }: RepoItemTypes) => {
@@ -15,24 +15,24 @@ const RepoItem = ({ repo }: RepoItemTypes) => {
   return (
     <>
       <a href={htmlURL} target="_blank" rel="noreferrer">
-        <div className="mb-2 rounded-md card bg-gray-300 hover:bg-gray-400">
+        <div className="card bg-gray-300 rounded-md mb-2 hover:bg-gray-400">
           <div className="card-body">
-            <h3 className="mb-2 text-xl font-semibold">
+            <h3 className="text-xl font-semibold mb-2">
               <FaLink className="inline mr-1" />
               {name}
             </h3>
             <p className="mb-3 hidden md:block">{description}</p>
             <div>
-              <div className="mr-2 badge badge-info badge-lg">
+              <div className="badge badge-info badge-lg mr-2">
                 <FaEye className="mr-2" /> {watchersCount}
               </div>
-              <div className="mr-2 badge badge-success badge-lg">
+              <div className="badge badge-success badge-lg mr-2">
                 <FaStar className="mr-2" /> {stargazersCount}
               </div>
-              <div className="mr-2 badge badge-error badge-lg">
+              <div className="badge badge-error badge-lg mr-2">
                 <FaInfo className="mr-2" /> {openIssuses}
               </div>
-              <div className="mr-2 badge badge-warning badge-lg">
+              <div className="badge badge-warning badge-lg mr-2">
                 <FaUtensils className="mr-2" /> {forks}
               </div>
             </div>

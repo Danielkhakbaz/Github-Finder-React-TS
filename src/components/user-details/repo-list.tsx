@@ -4,9 +4,9 @@ import { RepoTypes } from "../../types/repoTypes";
 const RepoList = ({ repos }: any) => {
   return (
     <>
-      <div className="rounded-lg shadow-lg card bg-base-100">
+      <div className="card bg-base-100 rounded-lg shadow-lg">
         <div className="card-body">
-          <h2 className="text-3xl my-4 font-bold card-title">
+          <h2 className="card-title text-3xl font-bold my-4">
             Lastest Repositories
           </h2>
           {repos?.map((repo: RepoTypes) => (

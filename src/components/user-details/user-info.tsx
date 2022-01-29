@@ -26,14 +26,14 @@ const UserInfo = ({ user }: any) => {
           <span>Back To Search</span>
         </Link>
       </div>
-      <div className="grid grid-cols-1 mb-6 xl:grid-cols-3 lg:grid-cols-3">
+      <div className="grid grid-cols-1 mb-6 lg:grid-cols-3 xl:grid-cols-3">
         <div className="flex justify-between lg:flex-col">
           <div>
             <h1 className="card-title text-4xl">{name}</h1>
             <div className="card-title">
-              <div className="ml-2 mr-1 badge badge-success">{type}</div>
+              <div className="badge badge-success mr-1 ml-2">{type}</div>
               {hireable && (
-                <div className="mx-1 badge badge-info">Hireable</div>
+                <div className="badge badge-info mx-1">Hireable</div>
               )}
             </div>
             <p className="text-lg font-semibold">{bio}</p>
@@ -52,7 +52,7 @@ const UserInfo = ({ user }: any) => {
         <div className="custom-card-image mt-4 lg:mt-0">
           <div className="card image-full rounded-lg shadow-xl">
             <figure>
-              <img src={avatarURL} alt="image" />
+              <img src={avatarURL} alt="User's github profile picture" />
             </figure>
             <div className="card-body justify-end">
               <h2 className="card-title">{name}</h2>
@@ -62,17 +62,17 @@ const UserInfo = ({ user }: any) => {
         </div>
       </div>
       <div className="col-span-2 mb-6">
-        <div className="w-full rounded-lg shadow-md bg-base-100 stats">
+        <div className="stats w-full bg-base-100 rounded-lg shadow-md">
           {location && (
             <div className="stat">
               <div className="stat-title text-md">Location</div>
-              <div className="text-lg stat-value">{location}</div>
+              <div className="stat-value text-lg">{location}</div>
             </div>
           )}
           {blog && (
             <div className="stat">
               <div className="stat-title text-md">Website</div>
-              <div className="text-lg stat-value">
+              <div className="stat-value text-lg">
                 <a href={`https://${blog}`} target="_blank" rel="noreferrer">
                   {blog}
                 </a>
@@ -82,7 +82,7 @@ const UserInfo = ({ user }: any) => {
           {twitterUsername && (
             <div className="stat">
               <div className="stat-title text-md">Twitter</div>
-              <div className="text-lg stat-value">
+              <div className="stat-value text-lg">
                 <a
                   href={`https://twitter.com/${twitterUsername}`}
                   target="_blank"
@@ -94,13 +94,13 @@ const UserInfo = ({ user }: any) => {
           )}
         </div>
       </div>
-      <div className="w-full py-5 mb-6 rounded-lg shadow-md bg-base-100 stats">
+      <div className="stats w-full bg-base-100 rounded-lg shadow-md py-5 mb-6">
         <div className="stat">
           <div className="stat-figure text-secondary">
             <FaUsers className="text-3xl hidden md:text-5xl lg:block" />
           </div>
           <div className="stat-title pr-5">Folllowers</div>
-          <div className="stat-value pr-5 text-3xl md:text-4xl">
+          <div className="stat-value text-3xl pr-5 md:text-4xl">
             {followers}
           </div>
         </div>
@@ -109,7 +109,7 @@ const UserInfo = ({ user }: any) => {
             <FaUserFriends className="text-3xl hidden md:text-5xl lg:block" />
           </div>
           <div className="stat-title pr-5">Folllowing</div>
-          <div className="stat-value pr-5 text-3xl md:text-4xl">
+          <div className="stat-value text-3xl pr-5 md:text-4xl">
             {following}
           </div>
         </div>
@@ -118,7 +118,7 @@ const UserInfo = ({ user }: any) => {
             <FaCodepen className="text-3xl hidden md:text-5xl lg:block" />
           </div>
           <div className="stat-title pr-5">Public Repos</div>
-          <div className="stat-value pr-5 text-3xl md:text-4xl">
+          <div className="stat-value text-3xl pr-5 md:text-4xl">
             {publicRepos}
           </div>
         </div>
