@@ -2,7 +2,7 @@
   "name": "github-finder-react-ts",
   "version": "0.1.0",
   "proxy": "https://api.github.com",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://github-finder-react-ts.vercel.app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
