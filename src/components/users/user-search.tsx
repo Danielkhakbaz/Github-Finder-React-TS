@@ -38,7 +38,9 @@ const UserSearch = () => {
                   value={searchValue}
                   onChange={handleChange}
                 />
-                <button className="btn btn-md w-36 absolute top-0 right-0 rounded-l-none">
+                <button
+                  className="btn btn-md w-36 absolute top-0 right-0 rounded-l-none"
+                  disabled={!searchValue}>
                   Go
                 </button>
               </div>

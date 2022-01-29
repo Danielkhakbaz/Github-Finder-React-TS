@@ -12,7 +12,3 @@ export type RepoTypes = {
 export type RepoItemTypes = {
   repo: RepoTypes;
 };
-
-export type ReposItemTypes = {
-  repos: Array<RepoItemTypes>;
-};

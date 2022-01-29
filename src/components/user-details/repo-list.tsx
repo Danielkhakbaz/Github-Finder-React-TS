@@ -1,4 +1,5 @@
 import RepoItem from "./repo-item";
+import { RepoTypes } from "../../types/repoTypes";
 
 const RepoList = ({ repos }: any) => {
   return (
@@ -8,20 +9,9 @@ const RepoList = ({ repos }: any) => {
           <h2 className="text-3xl my-4 font-bold card-title">
             Lastest Repositories
           </h2>
-          {repos?.map(
-            (repo: {
-              id: any;
-              name: string;
-              description: string;
-              html_url: string;
-              forks: number;
-              open_issues: number;
-              watchers_count: number;
-              stargazers_count: number;
-            }) => (
-              <RepoItem key={repo.id} repo={repo} />
-            )
-          )}
+          {repos?.map((repo: RepoTypes) => (
+            <RepoItem key={repo.id} repo={repo} />
+          ))}
         </div>
       </div>
     </>
