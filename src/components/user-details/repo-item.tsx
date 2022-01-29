@@ -16,23 +16,23 @@ const RepoItem = ({ repo }: RepoItemTypes) => {
     <>
       <a href={htmlURL} target="_blank" rel="noreferrer">
         <div className="card bg-gray-300 rounded-md mb-2 hover:bg-gray-400">
-          <div className="card-body">
-            <h3 className="text-xl font-semibold mb-2">
+          <div className="card-body p-4">
+            <h3 className="text-base font-semibold mb-2 lg:text-xl">
               <FaLink className="inline mr-1" />
               {name}
             </h3>
             <p className="mb-3 hidden md:block">{description}</p>
             <div>
-              <div className="badge badge-info badge-lg mr-2">
+              <div className="badge badge-info badge-xs mr-2 lg:badge-lg">
                 <FaEye className="mr-2" /> {watchersCount}
               </div>
-              <div className="badge badge-success badge-lg mr-2">
+              <div className="badge badge-success badge-xs mr-2 lg:badge-lg">
                 <FaStar className="mr-2" /> {stargazersCount}
               </div>
-              <div className="badge badge-error badge-lg mr-2">
+              <div className="badge badge-error badge-xs mr-2 lg:badge-lg">
                 <FaInfo className="mr-2" /> {openIssuses}
               </div>
-              <div className="badge badge-warning badge-lg mr-2">
+              <div className="badge badge-warning badge-xs mr-2 lg:badge-lg">
                 <FaUtensils className="mr-2" /> {forks}
               </div>
             </div>

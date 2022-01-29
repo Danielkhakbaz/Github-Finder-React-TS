@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaArrowLeft, FaUsers, FaUserFriends, FaCodepen } from "react-icons/fa";
+import { FaArrowLeft, FaUsers, FaUserFriends } from "react-icons/fa";
 
 const UserInfo = ({ user }: any) => {
   const {
@@ -14,33 +14,34 @@ const UserInfo = ({ user }: any) => {
     html_url: htmlURL,
     followers,
     following,
-    public_repos: publicRepos,
     hireable,
   } = user;
 
   return (
     <>
       <div className="mb-4">
-        <Link className="btn btn-ghost" to="/">
+        <Link className="btn btn-ghost btn-sm lg:btn-md" to="/">
           <FaArrowLeft className="mr-2" />
           <span>Back To Search</span>
         </Link>
       </div>
-      <div className="grid grid-cols-1 mb-6 lg:grid-cols-3 xl:grid-cols-3">
-        <div className="flex justify-between lg:flex-col">
+      <div className="grid grid-cols-1 mb-6 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="flex flex-col justify-between lg:flex-col">
           <div>
-            <h1 className="card-title text-4xl">{name}</h1>
-            <div className="card-title">
-              <div className="badge badge-success mr-1 ml-2">{type}</div>
-              {hireable && (
-                <div className="badge badge-info mx-1">Hireable</div>
-              )}
+            <div className="flex items-center lg:block">
+              <h1 className="card-title text-2xl lg:text-4xl">{name}</h1>
+              <div className="card-title">
+                <div className="badge badge-success mr-1 ml-2">{type}</div>
+                {hireable && (
+                  <div className="badge badge-info mx-1">Hireable</div>
+                )}
+              </div>
             </div>
-            <p className="text-lg font-semibold">{bio}</p>
+            <p className="w-full text-lg font-semibold">{bio}</p>
           </div>
-          <div className="card-actions">
+          <div className="card-actions justify-center lg:justify-start">
             <a
-              className="btn btn-outline btn-md"
+              className="btn btn-outline btn-xs w-1/2 text-center lg:btn-md"
               href={htmlURL}
               target="_blank"
               rel="noreferrer">
@@ -65,14 +66,14 @@ const UserInfo = ({ user }: any) => {
         <div className="stats w-full bg-base-100 rounded-lg shadow-md">
           {location && (
             <div className="stat">
-              <div className="stat-title text-md">Location</div>
-              <div className="stat-value text-lg">{location}</div>
+              <div className="stat-title text-sm lg:text-base">Location</div>
+              <div className="stat-value text-base lg:text-lg ">{location}</div>
             </div>
           )}
           {blog && (
             <div className="stat">
-              <div className="stat-title text-md">Website</div>
-              <div className="stat-value text-lg">
+              <div className="stat-title text-sm lg:text-base">Website</div>
+              <div className="stat-value text-base lg:text-lg ">
                 <a href={`https://${blog}`} target="_blank" rel="noreferrer">
                   {blog}
                 </a>
@@ -81,8 +82,8 @@ const UserInfo = ({ user }: any) => {
           )}
           {twitterUsername && (
             <div className="stat">
-              <div className="stat-title text-md">Twitter</div>
-              <div className="stat-value text-lg">
+              <div className="stat-title text-sm lg:text-base">Twitter</div>
+              <div className="stat-value text-base lg:text-lg ">
                 <a
                   href={`https://twitter.com/${twitterUsername}`}
                   target="_blank"
@@ -99,8 +100,8 @@ const UserInfo = ({ user }: any) => {
           <div className="stat-figure text-secondary">
             <FaUsers className="text-3xl hidden md:text-5xl lg:block" />
           </div>
-          <div className="stat-title pr-5">Folllowers</div>
-          <div className="stat-value text-3xl pr-5 md:text-4xl">
+          <div className="stat-title text-sm pr-5 lg:text-base">Folllowers</div>
+          <div className="stat-value text-base pr-5 lg:text-lg">
             {followers}
           </div>
         </div>
@@ -108,18 +109,9 @@ const UserInfo = ({ user }: any) => {
           <div className="stat-figure text-secondary">
             <FaUserFriends className="text-3xl hidden md:text-5xl lg:block" />
           </div>
-          <div className="stat-title pr-5">Folllowing</div>
-          <div className="stat-value text-3xl pr-5 md:text-4xl">
+          <div className="stat-title text-sm pr-5 lg:text-base">Folllowing</div>
+          <div className="stat-value text-base pr-5 lg:text-lg">
             {following}
-          </div>
-        </div>
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <FaCodepen className="text-3xl hidden md:text-5xl lg:block" />
-          </div>
-          <div className="stat-title pr-5">Public Repos</div>
-          <div className="stat-value text-3xl pr-5 md:text-4xl">
-            {publicRepos}
           </div>
         </div>
       </div>

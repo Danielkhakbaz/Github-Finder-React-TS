@@ -4,15 +4,8 @@ const Footer = () => {
   return (
     <>
       <footer className="footer footer-center bg-gray-700 p-4">
-        <p className="text-primary-content flex">
-          Copyright &copy; {year} - All rights reserved by
-          <a
-            className="link-hover font-bold"
-            href="https://www.instagram.com/danielkhakbaz"
-            target="_blank"
-            rel="noreferrer">
-            Danial Khakbaz
-          </a>
+        <p className="footer-title text-white font-extralight flex m-0">
+          Copyright &copy; {year} - All rights reserved by Danial Khakbaz
         </p>
       </footer>
     </>

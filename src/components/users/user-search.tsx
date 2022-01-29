@@ -26,20 +26,20 @@ const UserSearch = () => {
 
   return (
     <>
-      <div className="flex justify-center my-12">
+      <div className="flex justify-center my-6 lg:my-7">
         <div className="w-3/5">
           <form onSubmit={handleSubmit}>
             <div className="form-control">
               <div className="relative">
                 <input
-                  className="input input-md input-bordered w-full text-black"
+                  className="input input-sm input-bordered w-full text-black lg:input-md"
                   placeholder="Search..."
                   type="text"
                   value={searchValue}
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-md w-36 absolute rounded-l-none top-0 right-0"
+                  className="btn btn-sm absolute rounded-l-none top-0 right-0 lg:w-36 lg:btn-md"
                   disabled={!searchValue}>
                   Go
                 </button>
@@ -49,7 +49,7 @@ const UserSearch = () => {
         </div>
         <div>
           <button
-            className="btn btn-ghost btn-md w-full ml-2"
+            className="btn btn-ghost btn-sm w-4/5 ml-2 lg:btn-md"
             onClick={handleClick}
             disabled={!searchValue}>
             Clear

@@ -9,21 +9,27 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-between p-2">
           <Link to="/">
             <button className="link link-hover">
-              <GoMarkGithub className="text-3xl inline" />
-              <span className="font-bold ml-2">Github Finder</span>
+              <GoMarkGithub className="text-xl inline lg:text-3xl" />
+              <span className="font-bold hidden ml-2 lg:inline">
+                Github Finder
+              </span>
             </button>
           </Link>
           <div className="flex justify-end">
             <Link to="/">
               <button className="btn btn-ghost btn-sm rounded-btn">
-                <MdOutlineHome className="text-xl inline" />
-                <span className="text-base ml-1">Home</span>
+                <MdOutlineHome className="text-base inline lg:text-xl" />
+                <span className="text-xs ml-0.5 xl:text-base xl:ml-1">
+                  Home
+                </span>
               </button>
             </Link>
             <Link to="/about">
               <button className="btn btn-ghost btn-sm rounded-btn ml-1">
-                <MdInfoOutline className="text-xl inline" />
-                <span className="text-base ml-1">About</span>
+                <MdInfoOutline className="text-base inline lg:text-xl" />
+                <span className="text-xs ml-0.5 xl:text-base xl:ml-1">
+                  About
+                </span>
               </button>
             </Link>
           </div>

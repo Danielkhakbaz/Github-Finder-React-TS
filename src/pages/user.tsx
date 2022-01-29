@@ -35,7 +35,7 @@ const User = () => {
   return (
     <>
       {!loading ? (
-        <div className="mx-auto lg:w-10/12">
+        <div className="mx-auto">
           <UserInfo user={user} />
           {repos?.length !== 0 && <RepoList repos={repos} />}
         </div>

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import GithubProvider from "./providers/github/GithubProvider";
 import Compose from "./components/compose/compose";
 import Layout from "./components/layout/layout";
@@ -18,7 +18,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/user/:username" element={<User />} />
             <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/404" />} />
           </Routes>
         </Layout>
       </Compose>

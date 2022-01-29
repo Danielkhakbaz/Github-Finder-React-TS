@@ -8,7 +8,7 @@ const UserList = () => {
   return (
     <>
       {!loading ? (
-        <section className="grid grid-cols-1 gap-8 my-4 md:grid-cols-2 lg:grid-cols-3 xl:grid_cols-4">
+        <section className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid_cols-4">
           {users?.map((user) => (
             <UserItem user={user} key={user.id} />
           ))}

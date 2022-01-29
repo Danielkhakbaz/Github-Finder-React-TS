@@ -8,8 +8,10 @@ const About = () => {
 
   return (
     <>
-      <strong className="text-7xl tracking-wide">Github Finder</strong>
-      <p className="text-xl py-5">
+      <strong className="text-4xl tracking-wide lg:text-6xl">
+        Github Finder
+      </strong>
+      <p className="text-base py-5 lg:text-lg">
         A React.js app to search for Github profiles and being able to see the
         profile deatils. This is one of my projects which you can also give a
         star to this{" "}
@@ -23,11 +25,11 @@ const About = () => {
         if you want to :)
       </p>
       <div>
-        <p className="text-base">My Socials:</p>
+        <p className="text-sm lg:text-base">My Socials:</p>
         <div className="flex mt-2">
           {socialMedias.map((data) => (
             <a
-              className="link-neutral text-4xl mx-2"
+              className="link-neutral text-2xl mx-2 lg:text-3xl"
               href={data.href}
               key={data.href}
               target="_blank"

@@ -6,7 +6,7 @@ const RepoList = ({ repos }: any) => {
     <>
       <div className="card bg-base-100 rounded-lg shadow-lg">
         <div className="card-body">
-          <h2 className="card-title text-3xl font-bold my-4">
+          <h2 className="card-title text-2xl font-bold my-4 lg:text-3xl">
             Lastest Repositories
           </h2>
           {repos?.map((repo: RepoTypes) => (
