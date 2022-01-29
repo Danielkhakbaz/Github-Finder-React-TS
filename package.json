@@ -1,8 +1,6 @@
 {
   "name": "github-finder-react-ts",
   "version": "0.1.0",
-  "proxy": "https://api.github.com",
-  "homepage": "https://github-finder-react-ts.vercel.app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -15,7 +13,6 @@
     "axios": "^0.25.0",
     "daisyui": "^1.25.2",
     "eslint-config-prettier": "^8.3.0",
-    "http-proxy-middleware": "^2.0.2",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
