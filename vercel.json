@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/main.ts",
+      "src": "src/**/*.tsx",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "src/index.tsx",
+      "src": "/.*",
+      "dest": "https://api.github.com",
       "methods": ["GET", "POST", "PUT", "PATCH", "OPTIONS", "DELETE"]
     }
   ]
