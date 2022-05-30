@@ -5,12 +5,14 @@ module.exports = (app: any) => {
     createProxyMiddleware("/users/", {
       target: "https://api.github.com",
       changeOrigin: true,
+      credentials: true,
     })
   );
   app.use(
     createProxyMiddleware("/search/users", {
       target: "https://api.github.com",
       changeOrigin: true,
+      credentials: true,
     })
   );
 };
