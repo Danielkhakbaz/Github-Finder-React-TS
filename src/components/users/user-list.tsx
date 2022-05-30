@@ -1,8 +1,8 @@
 import UserItem from "./user-item";
 import Spinner from "../spinner/spinner";
-import { useGithubContext } from "../../providers/github/GithubContext";
+import { useGithubContext } from "../../providers/github/github-context";
 
-const UserList = () => {
+const UserList: React.FC = () => {
   const { users, loading } = useGithubContext();
 
   return (

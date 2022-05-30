@@ -1,9 +1,12 @@
 import { useReducer } from "react";
-import { ChildrenTypes } from "../../types/childrenTypes";
-import { GithubReducer } from "./GithubReducer";
-import { GithubContext, GithubActionsContext } from "./GithubContext";
+import { GithubReducer } from "./github-reducer";
+import { GithubContext, GithubAction } from "./github-context";
 
-const GithubProvider = ({ children }: ChildrenTypes) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const GithubProvider: React.FC<Props> = ({ children }: Props) => {
   const initialState = {
     users: [],
     user: {},
@@ -18,12 +21,12 @@ const GithubProvider = ({ children }: ChildrenTypes) => {
       value={{
         ...state,
       }}>
-      <GithubActionsContext.Provider
+      <GithubAction.Provider
         value={{
           dispatch,
         }}>
         {children}
-      </GithubActionsContext.Provider>
+      </GithubAction.Provider>
     </GithubContext.Provider>
   );
 };

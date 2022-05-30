@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { FaArrowLeft, FaUsers, FaUserFriends } from "react-icons/fa";
+import classes from "../../styles/modules/card.module.css";
 
-const UserInfo = ({ user }: any) => {
+const UserInfo: React.FC<any> = ({ user }: any) => {
   const {
     name,
     type,
@@ -50,8 +51,8 @@ const UserInfo = ({ user }: any) => {
           </div>
         </div>
         <div />
-        <div className="custom-card-image mt-4 lg:mt-0">
-          <div className="card image-full rounded-lg shadow-xl">
+        <div className={`${classes.customCardImage} mt-4 lg:mt-0`}>
+          <div className={`card ${classes.imageFull} rounded-lg shadow-xl`}>
             <figure>
               <img src={avatarURL} alt="User's github profile picture" />
             </figure>

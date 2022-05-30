@@ -1,6 +1,9 @@
-import { ComposeTypes } from "../../types/composeTypes";
+type Props = {
+  components: Array<React.ComponentType | React.ReactNode>;
+  children: React.ReactNode;
+};
 
-const Compose = ({ components, children }: ComposeTypes) => {
+const Compose: React.FC<Props> = ({ components, children }: Props) => {
   return (
     <>
       {components.reverse().reduce((acc: any, curr: any) => {

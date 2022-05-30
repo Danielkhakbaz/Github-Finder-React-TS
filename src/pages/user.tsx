@@ -2,17 +2,17 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
   useGithubContext,
-  useGithubActionsContext,
-} from "../providers/github/GithubContext";
-import { getUser, getUserRepos } from "../providers/github/GithubAction";
+  useGithubAction,
+} from "../providers/github/github-context";
+import { getUser, getUserRepos } from "../providers/github/github-actions";
 import { Actions } from "../providers/github/Actions";
 import UserInfo from "../components/user-details/user-info";
 import RepoList from "../components/user-details/repo-list";
 import Spinner from "../components/spinner/spinner";
 
-const User = () => {
+const User: React.FC = () => {
   const { user, repos, loading } = useGithubContext();
-  const { dispatch } = useGithubActionsContext();
+  const { dispatch } = useGithubAction();
 
   const { username } = useParams() as { username: string };
 

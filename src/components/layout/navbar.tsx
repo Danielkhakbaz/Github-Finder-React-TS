@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { GoMarkGithub } from "react-icons/go";
 import { MdOutlineHome, MdInfoOutline } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <>
       <nav className="navbar shadow-lg bg-gray-900 text-neutral-content">

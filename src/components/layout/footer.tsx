@@ -1,4 +1,4 @@
-const Footer = () => {
+const Footer: React.FC = () => {
   const year = new Date().getFullYear();
 
   return (

@@ -1,7 +1,7 @@
 import { FaLink, FaEye, FaStar, FaInfo, FaUtensils } from "react-icons/fa";
-import { RepoItemTypes } from "../../types/repoTypes";
+import { RepoItemTypes } from "../../types/repo-item";
 
-const RepoItem = ({ repo }: RepoItemTypes) => {
+const RepoItem: React.FC<RepoItemTypes> = ({ repo }: RepoItemTypes) => {
   const {
     name,
     description,

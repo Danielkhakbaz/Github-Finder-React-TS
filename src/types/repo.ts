@@ -1,4 +1,4 @@
-export type RepoTypes = {
+export type Repo = {
   id: number;
   name: string;
   description: string;
@@ -7,8 +7,4 @@ export type RepoTypes = {
   open_issues: number;
   watchers_count: number;
   stargazers_count: number;
-};
-
-export type RepoItemTypes = {
-  repo: RepoTypes;
 };

@@ -1,4 +1,4 @@
-import { GithubAxios } from "../../services/axios/axios.config";
+import { GithubAxios } from "../../services/axios.config";
 
 export const getUser = async (username: string) => {
   const { data } = await GithubAxios.get(`/users/${username}`);

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useGithubActionsContext } from "../../providers/github/GithubContext";
-import { searchUsers } from "../../providers/github/GithubAction";
+import { useGithubAction } from "../../providers/github/github-context";
+import { searchUsers } from "../../providers/github/github-actions";
 import { Actions } from "../../providers/github/Actions";
 
-const UserSearch = () => {
+const UserSearch: React.FC = () => {
   const [searchValue, setSearchValue] = useState<string>("");
-  const { dispatch } = useGithubActionsContext();
+  const { dispatch } = useGithubAction();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();

@@ -15,10 +15,6 @@ export type UserTypes = {
   hireable: string;
 };
 
-export type UserItemTypes = {
-  user: UserTypes;
-};
-
 export const UserDefaultValues = {
   avatar_url: "",
   id: 0,

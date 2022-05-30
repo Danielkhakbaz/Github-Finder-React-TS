@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { UserItemTypes } from "../../types/userTypes";
+import { UserItemTypes } from "../../types/user-item";
 
-const UserItem = ({
+const UserItem: React.FC<UserItemTypes> = ({
   user: { avatar_url: avatarURL, login: username },
 }: UserItemTypes) => {
   return (

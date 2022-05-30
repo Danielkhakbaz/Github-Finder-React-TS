@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MdOutlineHome } from "react-icons/md";
 
-const NotFound = () => {
+const NotFound: React.FC = () => {
   useEffect(() => {
     document.title = "404 | Github Finder";
   });

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { socialMedias } from "../services/api/aboutData";
+import { socialMedias } from "../services/author-profiles/author-profiles";
 
-const About = () => {
+const About: React.FC = () => {
   useEffect(() => {
     document.title = "About | Github Finder";
   });

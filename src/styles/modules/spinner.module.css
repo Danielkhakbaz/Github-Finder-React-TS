@@ -7,10 +7,6 @@
   }
 }
 
-.custom-card-image .card.image-full::before {
-  border-radius: 0.5rem;
-  opacity: 0.45;
-}
 .spinner__icon {
   width: 8rem;
   height: 8rem;

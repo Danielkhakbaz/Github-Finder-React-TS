@@ -1,5 +1,17 @@
 import { Actions } from "./Actions";
-import { StateTypes, ActionTypes } from "../../types/githubReducerTypes";
+import { UserTypes } from "../../types/user";
+
+type StateTypes = {
+  users?: Array<UserTypes>;
+  user?: any;
+  repos?: any;
+  loading?: boolean;
+};
+
+type ActionTypes = {
+  type: string;
+  payload?: Array<UserTypes>;
+};
 
 export const GithubReducer = (state: StateTypes, action: ActionTypes) => {
   switch (action.type) {
@@ -25,6 +37,7 @@ export const GithubReducer = (state: StateTypes, action: ActionTypes) => {
       return {
         ...state,
         users: [],
+        loading: false,
       };
     case Actions.SET_LOADING:
       return {
